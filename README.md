@@ -1,0 +1,2 @@
+# multiple_binaries_azure_win
+multiple_binaries_azure_win
