@@ -1,0 +1,45 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+# - script: echo Hello, world!
+#   displayName: 'Run a one-line script'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '2.7'
+
+- script: python -m pip install --upgrade pip setuptools wheel
+  displayName: 'Install tools'
+
+- script: pip install requests
+  displayName: 'Install requests'
+
+- script: pip install selenium
+  displayName: 'Install selenium'
+
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'Akhil''s Cred'
+    browserstackLocal: true
+    bsLocalOptions: |
+      forceLocal: true
+      logFile: logger.txt
+      verbose: 3
+
+- script: python parallels1.py
+  displayName: 'Run parallels 1'
+
+- task: BrowserStackStopLocal@0
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'
