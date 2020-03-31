@@ -31,7 +31,6 @@ steps:
     browserstackLocal: true
     bsLocalOptions: |
       forceLocal: true
-      logFile: logger.txt
       verbose: 3
 
 - script: python parallels1.py
