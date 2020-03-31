@@ -32,6 +32,7 @@ steps:
     bsLocalOptions: |
       forceLocal: true
       verbose: 3
+      logFile: logger.txt
 
 - script: python parallels1.py
   displayName: 'Run parallels 1'
