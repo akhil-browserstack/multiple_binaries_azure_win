@@ -36,8 +36,9 @@ class AutomateParallelThread(threading.Thread):
             desired_capabilities=desired_cap)
         # start_time = time.time()
         start_time = time.time()
-
-        driver.get("https://fast.com")
+        for i in range(20):
+            driver.get("https://fast.com")
+            time.sleep(2)
 
         end_time = time.time()
 
