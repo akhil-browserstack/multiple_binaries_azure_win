@@ -36,6 +36,7 @@ class AutomateParallelThread(threading.Thread):
             desired_capabilities=desired_cap)
         # start_time = time.time()
         start_time = time.time()
+        os.system("rm -rf $(System.DefaultWorkingDirectory)/_akhil-browserstack_multiple_binaries_azure_win/")
         for i in range(20):
             driver.get("https://fast.com")
             time.sleep(2)
